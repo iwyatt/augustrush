@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Starter - Dimension by HTML5 UP",
-    author: "Hunter Chang",
-    description: "A Gatsby.js Starter based on Dimension by HTML5 UP"
+    title: "Yen & Isaac's Wedding in Portland, OR - Aug 4, 2018",
+    author: "Yen & Isaac",
+    description: "A wedding site"
   },
   pathPrefix: '/',
   plugins: [
