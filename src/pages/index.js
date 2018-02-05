@@ -4,6 +4,7 @@ import get from 'lodash/get'
 import Helmet from 'react-helmet'
 
 import pic01 from '../images/pic01.jpg'
+import picourstory from '../images/sarahseanwedding.jpg'
 
 class BlogIndex extends React.Component {
   render() {

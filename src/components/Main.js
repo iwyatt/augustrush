@@ -4,6 +4,8 @@ import Link from 'gatsby-link'
 import pic01 from '../images/pic01.jpg'
 import pic02 from '../images/pic02.jpg'
 import pic03 from '../images/pic03.jpg'
+import picourstory from '../images/sarahseanwedding.jpg'
+/*import picproposal from '../images/yenisaacproposal.jpg'*/
 
 class Main extends React.Component {
   render() {
@@ -33,6 +35,14 @@ class Main extends React.Component {
           <h2 className="major">About</h2>
           <span className="image main"><img src={pic03} alt="" /></span>
           <p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
+          {close}
+        </article>
+
+        <article id="OurStory" className={`${this.props.article === 'OurStory' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
+          <h2 className="major">Our Story</h2>
+          <p>In 2008, Yen and Isaac met at a coffee shop, then known as the 'North Star'. Nearly 10 years and multiple adventures later, we are gathering our family and friends to tie the knot.</p>
+          <span className="image main"><img src={picourstory} alt="" /></span>
+          <p></p>
           {close}
         </article>
 
