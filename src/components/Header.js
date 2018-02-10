@@ -2,15 +2,15 @@ import React from 'react'
 
 import AddToCalendar from 'react-add-to-calendar';
 
-class Example extends React.Component {
-  static displayName = 'Example';
+class WeddingEvent extends React.Component {
+  static displayName = 'Wedding';
   state = {
     event: {
-      title: 'Sample Event',
-      description: 'This is the sample event provided as an example only',
+      title: 'Yen & Isaac\'s Wedding',
+      description: 'Join us for a Vietnamese wedding ceremony and reception to follow.',
       location: 'Portland, OR',
-      startTime: '2016-09-16T20:15:00-04:00',
-      endTime: '2016-09-16T21:45:00-04:00'
+      startTime: '2018-08-04T16:00:00-04:00',
+      endTime: '2018-08-04T22:00:00-04:00'
     }
   };
 }
@@ -31,7 +31,6 @@ const Header = (props) => (
                 <li><a href="javascript:;" onClick={() => {props.onOpenArticle('OurStory')}}>Our Story</a></li>
             </ul>
         </nav>
-        <nav><ul><AddToCalendar event={Example.event} buttonLabel="Save the Date" displayItemIcons={false} /></ul></nav>
     </header>
 )
 
