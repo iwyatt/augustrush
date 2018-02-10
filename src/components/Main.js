@@ -1,15 +1,13 @@
 import React from 'react'
 import Link from 'gatsby-link'
-
 import pic01 from '../images/pic01.jpg'
 import pic02 from '../images/pic02.jpg'
 import pic03 from '../images/pic03.jpg'
 import picourstory from '../images/sarahseanwedding.jpg'
-/*import picproposal from '../images/yenisaacproposal.jpg'*/
+import rockhardplace from '../images/rockhardplace.jpg'
 
 class Main extends React.Component {
   render() {
-
     let close = <div className="close" onClick={() => {this.props.onCloseArticle()}}></div>
 
     return (
@@ -39,10 +37,14 @@ class Main extends React.Component {
         </article>
 
         <article id="OurStory" className={`${this.props.article === 'OurStory' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
-          <h2 className="major">Our Story</h2>
-          <p>In 2008, Yen and Isaac met at a coffee shop, then known as the 'North Star'. Nearly 10 years and multiple adventures later, we are gathering our family and friends to tie the knot.</p>
+          <h2 className="major">The Meeting</h2>
+          <p>In 2008, Yen and Isaac met at a Santa Barbara coffee shop, then known as the 'North Star'. The question of whom first approached whom in the North Star is a point of semantics - you may have to listen to both versions of the story in order to decide.</p>
+          <p>They hit it off over coffee and tea, and a discussion of the books they were reading (<i>Catch-22</i> by Joseph Heller and <i>We Were the Mulvaneys</i> by Joyce Carol Oates).  For the remainder of the day, Isaac showed Yen around downtown Santa Barbara.</p>
           <span className="image main"><img src={picourstory} alt="" /></span>
-          <p></p>
+          <h2 className="major">The Proposal</h2>
+          <p>In September 2017, on a ledge on top of Half Dome in Yosemite National Park, Isaac put Yen between a rock and a hard place.</p>
+          <span className="image main"><img src={rockhardplace} alt="" /></span>
+          <p>Nearly 10 years and multiple adventures later, we are gathering our family and friends in Portland, OR to tie the knot.</p>
           {close}
         </article>
 
