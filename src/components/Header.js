@@ -13,10 +13,6 @@ class Example extends React.Component {
       endTime: '2016-09-16T21:45:00-04:00'
     }
   };
-
-  render() {
-    return <AddToCalendar event={this.state.event}/>;
-  };
 }
 
 const Header = (props) => (
@@ -35,7 +31,7 @@ const Header = (props) => (
                 <li><a href="javascript:;" onClick={() => {props.onOpenArticle('OurStory')}}>Our Story</a></li>
             </ul>
         </nav>
-        <nav><ul><AddToCalendar event={event} buttonLabel="Save the Date" displayItemIcons={false} /></ul></nav>
+        <nav><ul><AddToCalendar event={Example.event} buttonLabel="Save the Date" displayItemIcons={false} /></ul></nav>
     </header>
 )
 
