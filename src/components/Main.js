@@ -95,16 +95,24 @@ class Main extends React.Component {
         <article id="faq" className={`${this.props.article === 'faq' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Information</h2>
           <span className="image main"><img src={ladyoflavang} alt="" /></span>
-          <p>The wedding is August 4th in Portland, OR. The both the wedding and the reception North-East Portland, not far from the airport and hotels.</p>
+          <p>Our wedding will be on August 4th in Portland, OR. Both the wedding and the reception are located in northeast Portland, not far from the airport and hotels.</p>
           <h2 className="major">Day's Events</h2>
+          <h3>Asking Ceremony</h3>
+          <p>One traditional Vietnamese pre-wedding ceremony is called Lễ Đính Hôn (also referred to as Đám Hỏi, or literally translated “Asking Ceremony”), which is where the groom and his family ask the bride’s family for their daughter’s hand in marriage. Usually attended only my family and close friends.</p>
+          <p>The general order of events is as follows:
+          <ul>
+          <li>The groom and his family and friends hold a procession to the bride’s house bearing gifts</li>
+          <li>With blessings from both families, the groom will officially ask for the bride’s hand. Gifts and a tea ceremony with the parents will ensue. </li>
+          <li>Guests are invited to lunch at the house where they will enjoy what the bride’s family has cooked, as well as, the roast pig and the sticky rice that the groom and his family has brought</li>
+          </ul></p>
+          <p>Men generally wear suit and tie, and women wear toned-down cocktail attire or traditional Vietnamese ao dai</p>
           <h3>Wedding Mass</h3>
           <p>The wedding ceremony will be presented in both Vietnamese and English.</p>
-          <p>Men generally wear suit and tie, and women wear toned-down cocktail attire (can be the same thing you wore in the morning)</p>
-          <p>A bilingual wedding mass will be held at the church the bride grew up going to, and where her parents, and brother and sister-in-law are parishioners.</p>
-          <p>It will be a full mass that will last about an hour and includes: 2 readings from the Bible, gospel acclamation, homily from the priest, eucharist/communion, the wedding part that everyone knows (vows and exchange of rings), communion, conclusion, signing the marriage certificate.</p>
+          <p>It will be a full mass and should last about an hour. The details include: 2 readings from the Bible, gospel acclamation, homily from the priest, eucharist/communion, the wedding part that everyone knows (vows and exchange of rings), communion, conclusion, signing the marriage certificate. Don't worry, there will be a program and we will provide some information for non-Catholics!</p>
+          <p>Men generally wear suit and tie, and women wear toned-down cocktail attire. Vietnamese women will be wearing the traditional Vietnamese dress called "ao dai".</p>
           <h3>Reception</h3>
-          <p>Come celebrate with us! There will be an 8-course Chinese meal served family style, plenty of dancing, and lots of fun! Cocktail attire is fine for both men and women.</p>
-          <p>Throughout, there will be a couple of speeches, introductions of family members, a visit from the bride and groom at your table, and other shenanigans.</p>
+          <p>Come celebrate with us! There will be an 8-course Chinese meal served family style, plenty of Vietnamese ceremonies and traditions, speeches, a visit from the  bride and groom at your table, and other shenanigans.</p>
+          <p>Cocktail attire is fine for both men and women but come wearing whatever you want; just be ready to join in our love and joy!</p>
           {close}
         </article>
 
