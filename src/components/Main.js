@@ -7,8 +7,6 @@ import picourstory from '../images/sarahseanwedding.jpg'
 import rockhardplace from '../images/rockhardplace.jpg'
 import adventures from '../images/yenikecollage.jpg'
 
-
-
 class Main extends React.Component {
   constructor(props) {
       super();
@@ -33,7 +31,7 @@ class Main extends React.Component {
         <p>Thanks, your information has been sent!</p>
         </div>
     let form =
-    <form>
+        <div>
     <p>Provide your contact information and we will send you the details and an RSVP.</p>
     <form onSubmit={this.handleSubmit}>
       <div className="field half first">
@@ -72,10 +70,8 @@ class Main extends React.Component {
         <li><button>Send</button></li>
         <li><input type="reset" value="Reset" /></li>
       </ul>
-    </form>
-    </form>
-
-
+      </form>
+    </div>
     let close = <div className="close" onClick={() => {this.props.onCloseArticle()}}></div>
     return (
       <div id="main" style={this.props.timeout ? {display: 'flex'} : {display: 'none'}}>
@@ -138,7 +134,6 @@ Main.propTypes = {
   route: React.PropTypes.object,
   article: React.PropTypes.string,
   articleTimeout: React.PropTypes.bool,
-  onOpenArticle: React.PropTypes.func,
   onCloseArticle: React.PropTypes.func,
   timeout: React.PropTypes.bool
 }

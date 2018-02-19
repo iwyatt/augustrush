@@ -1,7 +1,5 @@
 import React from 'react'
 
-import AddToCalendar from 'react-add-to-calendar';
-
 const Header = (props) => (
     <header id="header" style={props.timeout ? {display: 'none'} : {}}>
         <div className="logo">
