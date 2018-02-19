@@ -181,3 +181,7 @@
 	.align-right {
 		text-align: right;
 	}
+
+	.displayErrors input:invalid {
+  		border-color: red;
+	}

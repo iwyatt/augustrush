@@ -14,6 +14,14 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+          trackingId: "UA-22385990-1",
+          head: false,
+          anonymize: true,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
