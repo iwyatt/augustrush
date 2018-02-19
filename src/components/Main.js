@@ -14,12 +14,10 @@ class Main extends React.Component {
       super();
       this.handleSubmit = this.handleSubmit.bind(this);
       const formSubmitted = false;
-      const thankYouContent = <h1>Thank you, your content has been submitted.</h1>;
   }
 
   handleSubmit(event) {
   event.preventDefault();
-  this.setState({'submitted': true });
   this.formSubmitted = true;
   const data = new FormData(event.target);
   console.log("submitted")
@@ -75,9 +73,6 @@ class Main extends React.Component {
         <li><input type="reset" value="Reset" /></li>
       </ul>
     </form>
-    <ul className="icons">
-      <li><a href="#" className="icon fa-facebook"><span className="label">Facebook</span></a></li>
-    </ul>
     </form>
 
 
@@ -90,6 +85,9 @@ class Main extends React.Component {
           <span className="image main"><img src={pic01} alt="" /></span>
           <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+          <ul className="icons">
+            <li><a href="#" className="icon fa-facebook"><span className="label">Facebook</span></a></li>
+          </ul>
           {close}
         </article>
 
