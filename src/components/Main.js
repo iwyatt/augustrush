@@ -10,19 +10,19 @@ import adventures from '../images/yenikecollage.jpg'
 class Main extends React.Component {
   constructor(props) {
       super();
-      this.handleSubmit = this.handleSubmit.bind(this);
       const formSubmitted = false;
+      this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(event) {
   event.preventDefault();
   this.formSubmitted = true;
   const data = new FormData(event.target);
-  console.log("submitted")
   fetch('https://hooks.zapier.com/hooks/catch/488659/zwuv6z/', {
     method: 'POST',
     body: data,
   });
+  this.forceUpdate()
   }
 
   render() {
@@ -30,6 +30,7 @@ class Main extends React.Component {
         <div>
         <p>Thanks, your information has been sent!</p>
         </div>
+
     let form =
         <div>
     <p>Provide your contact information and we will send you the details and an RSVP.</p>
@@ -72,6 +73,7 @@ class Main extends React.Component {
       </ul>
       </form>
     </div>
+
     let close = <div className="close" onClick={() => {this.props.onCloseArticle()}}></div>
     return (
       <div id="main" style={this.props.timeout ? {display: 'flex'} : {display: 'none'}}>
