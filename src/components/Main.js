@@ -6,6 +6,7 @@ import pic03 from '../images/pic03.jpg'
 import picourstory from '../images/sarahseanwedding.jpg'
 import rockhardplace from '../images/rockhardplace.jpg'
 import adventures from '../images/yenikecollage.jpg'
+import ladyoflavang from '../images/ladyoflavang.jpg'
 
 class Main extends React.Component {
   constructor(props) {
@@ -28,12 +29,14 @@ class Main extends React.Component {
   render() {
     let thanks =
         <div>
-        <p>Thanks, your information has been sent!</p>
+        <h2 className="major">Thank you!</h2>
+        <p>You should receive an email confirming we received your details.</p>
         </div>
 
     let form =
         <div>
-    <p>Provide your contact information and we will send you the details and an RSVP.</p>
+    <h2 className="major">Send details</h2>
+    <p>Provide your contact information and we will send you the details and an RSVP this summer.</p>
     <form onSubmit={this.handleSubmit}>
       <div className="field half first">
         <label htmlFor="name">First & Last Name</label>
@@ -64,7 +67,7 @@ class Main extends React.Component {
         <input type="text" name="country" id="country" required />
       </div>
       <div className="field">
-        <label htmlFor="message">Additional Information</label>
+        <label htmlFor="message">Anything else we know before sending an RSVP?</label>
         <textarea name="message" id="message" rows="4"></textarea>
       </div>
       <ul className="actions">
@@ -89,11 +92,19 @@ class Main extends React.Component {
           {close}
         </article>
 
-        <article id="work" className={`${this.props.article === 'work' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
-          <h2 className="major">Work</h2>
-          <span className="image main"><img src={pic02} alt="" /></span>
-          <p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-          <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
+        <article id="faq" className={`${this.props.article === 'faq' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
+          <h2 className="major">Information</h2>
+          <span className="image main"><img src={ladyoflavang} alt="" /></span>
+          <p>The wedding is August 4th in Portland, OR. The both the wedding and the reception North-East Portland, not far from the airport and hotels.</p>
+          <h2 className="major">Day's Events</h2>
+          <h3>Wedding Mass</h3>
+          <p>The wedding ceremony will be presented in both Vietnamese and English.</p>
+          <p>Men generally wear suit and tie, and women wear toned-down cocktail attire (can be the same thing you wore in the morning)</p>
+          <p>A bilingual wedding mass will be held at the church the bride grew up going to, and where her parents, and brother and sister-in-law are parishioners.</p>
+          <p>It will be a full mass that will last about an hour and includes: 2 readings from the Bible, gospel acclamation, homily from the priest, eucharist/communion, the wedding part that everyone knows (vows and exchange of rings), communion, conclusion, signing the marriage certificate.</p>
+          <h3>Reception</h3>
+          <p>Come celebrate with us! There will be an 8-course Chinese meal served family style, plenty of dancing, and lots of fun! Cocktail attire is fine for both men and women.</p>
+          <p>Throughout, there will be a couple of speeches, introductions of family members, a visit from the bride and groom at your table, and other shenanigans.</p>
           {close}
         </article>
 
@@ -107,23 +118,22 @@ class Main extends React.Component {
         <article id="OurStory" className={`${this.props.article === 'OurStory' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">First Sight</h2>
           <p>In 2008, Yen and Isaac met at a Santa Barbara coffee shop, then known as the 'North Star'. Whether it was Yen or Isaac who approached the other first is a questions of semantics - you may have to listen to both versions of the story in order to decide.</p>
-          <p>They quickly hit it off over coffee and tea, and a discussion of the books they were reading (<i>Catch-22</i> by Joseph Heller and <i>We Were the Mulvaneys</i> by Joyce Carol Oates).  For the remainder of the day, Isaac showed Yen around downtown Santa Barbara.</p>
+          <p>They quickly hit it off discussing the books they were reading (<i>Catch-22</i> by Joseph Heller and <i>We Were the Mulvaneys</i> by Joyce Carol Oates), and sipping coffee and tea. For the remainder of the day, Isaac showed Yen around downtown Santa Barbara.</p>
           <span className="image main"><img src={picourstory} alt="" /></span>
 
           <h2 className="major">Adventures</h2>
           <p>Since then, Yen and Isaac have traversed parts of the world and shared many adventures together.</p>
           <span className="image main"><img src={adventures} alt="" /></span>
-          <p>They have been on Numerous motorcycle rides, camping trips, and hikes throughout the world - visiting breweries, restaurants, and friend's weddings too!</p>
+          <p>They have been on numerous motorcycle rides, camping trips, and hikes throughout the world - visiting breweries, restaurants, and friends' weddings too!</p>
 
           <h2 className="major">The Proposal</h2>
-          <p>In September 2017, After the 5th attempt at winning a lottery pass to Half Dome, Isaac took Yen out for an motorcycle adventure to Yosemite. After a night spent at a roadside motel, they woke early to begin a eight hour trek to summit Half Dome and back without knowing when or where they would spend the night.</p>
-          <p>Upon summiting Half Dome, and a chance meeting with Isaac's friend Viren, Isaac asked Yen to pose for a photo with him on a ledge known as 'The Visor' and Viren to take the picture. Neither knew what was about to happen. It is here that Isaac put Yen between a rock and a hard place.</p>
+          <p>In September 2017, after the 5th attempt at winning a lottery pass to climb Half Dome in Yosemite National Park, Isaac took Yen out for an motorcycle adventure to Yosemite. After a night spent at a roadside motel, they awoke early to begin a eight hour trek to summit Half Dome and back without knowing when or where they would spend the night.</p>
+          <p>Upon summiting Half Dome, and a chance meeting with Isaac's friend Viren, Isaac asked Yen to pose for a photo with him on a ledge known as 'The Visor' and Viren to take the picture. Neither Yen nor Viren knew what was about to happen. It was here that Isaac put Yen between a rock and a hard place.</p>
           <span className="image main"><img src={rockhardplace} alt="" /></span>
           <p>10 years and multiple adventures later, we are gathering our family and friends in Portland, OR to tie the knot.</p>
           {close}
         </article>
         <article id="contact" className={`${this.props.article === 'contact' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
-          <h2 className="major">Send details</h2>
           {this.formSubmitted ? thanks:form}
           {close}
         </article>
