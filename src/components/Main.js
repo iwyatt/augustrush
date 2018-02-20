@@ -104,7 +104,8 @@ class Main extends React.Component {
           <li>The groom and his family and friends hold a procession to the bride’s house bearing gifts</li>
           <li>With blessings from both families, the groom will officially ask for the bride’s hand. Gifts and a tea ceremony with the parents will ensue. </li>
           <li>Guests are invited to lunch at the house where they will enjoy what the bride’s family has cooked, as well as, the roast pig and the sticky rice that the groom and his family has brought</li>
-          </ul></p>
+          </ul>
+          </p>
           <p>Men generally wear suit and tie, and women wear toned-down cocktail attire or traditional Vietnamese ao dai</p>
           <h3>Wedding Mass</h3>
           <p>The wedding ceremony will be presented in both Vietnamese and English.</p>
