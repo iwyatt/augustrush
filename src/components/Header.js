@@ -1,4 +1,6 @@
 import React from 'react'
+import 'react-input-range/lib/css/index.css'
+import 'react-input-range/lib/css/input-range/input-range.css'
 
 const Header = (props) => (
     <header id="header" style={props.timeout ? {display: 'none'} : {}}>

@@ -10,8 +10,6 @@ import ladyoflavang from '../images/ladyoflavang.jpg'
 import pdx from '../images/pdx.jpg'
 import ReactRadioButtonGroup from 'react-radio-button-group'
 import InputRange from 'react-input-range'
-import 'react-input-range/lib/css/index.css'
-
 
 class Main extends React.Component {
   constructor(props) {
