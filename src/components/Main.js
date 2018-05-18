@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import ReactDOM from 'react-dom';
 import pic01 from '../images/pic01.jpg'
 import pic02 from '../images/pic02.jpg'
 import pic03 from '../images/pic03.jpg'
@@ -8,67 +9,82 @@ import rockhardplace from '../images/rockhardplace.jpg'
 import adventures from '../images/yenikecollage.jpg'
 import ladyoflavang from '../images/ladyoflavang.jpg'
 import pdx from '../images/pdx.jpg'
+import ReactRadioButtonGroup from 'react-radio-button-group'
+import InputRange from 'react-input-range'
+import 'react-input-range/lib/css/index.css'
 
 class Main extends React.Component {
   constructor(props) {
-      super();
+      super(props);
       const formSubmitted = false;
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.state = { value: 2 };
   }
 
-  handleSubmit(event) {
+handleBoolChange(value) {
+  selectedValue: value;
+}
+
+ handleSubmit(event) {
   event.preventDefault();
   this.formSubmitted = true;
   const data = new FormData(event.target);
-  fetch('https://hooks.zapier.com/hooks/catch/488659/zwuv6z/', {
+  fetch('https://hooks.zapier.com/hooks/catch/488659/ahxg2m/', {
     method: 'POST',
     body: data,
   });
   this.forceUpdate()
-  }
+ }
 
   render() {
     let thanks =(
         <div>
-        <h2 className="major">Thank you!</h2>
-        <p>You should receive an email confirming we received your details.</p>
+        <h2 className="major">Thank you</h2>
+        <p>Please check your email to confirm we've received your RSVP</p>
+        <p>We highly recommend booking your travel and lodging now, as Augsust is a popular month for tourism in Portland, OR. If you are looking for recommendations on what to do, where to stay, and other information, please see our "Tour Portland" recommendations or feel free to start a conversation in the facebook group.</p>
         </div>
     )
     let form =(
         <div>
-    <h2 className="major">Send details</h2>
-    <p>Provide your contact information and we will send you the details and an RSVP this summer.</p>
+    <h2 className="major">RSVP</h2>
+    <p>PLease let us know if you will be able to join</p>
     <form onSubmit={this.handleSubmit}>
       <div className="field half first">
-        <label htmlFor="name">First & Last Name</label>
-        <input type="text" name="name" id="name" required />
+        <label htmlFor="firstname">First Name</label>
+        <input type="text" name="firstname" id="firstname" required />
       </div>
       <div className="field half">
-        <label htmlFor="email">Email</label>
+        <label htmlFor="lastname">Last Name</label>
+        <input type="text" name="lastname" id="lastname" required />
+      </div>
+      <div className="field">
+        <label htmlFor="email">Your Email Address</label>
         <input type="email" name="email" id="email" required />
+        <p></p>
+      </div>
+      <div>
+        <p></p>
+        <label htmlFor="rsvp">Will you be attending?</label>
+        <ReactRadioButtonGroup name="isAttending" options={["We're Looking forward to it!", "Will have to miss the fun"]} value="Looking forward to it!" isStateful={true} onChange={this.handleBoolChange} />
+      <p></p>
+      </div>
+      <div>
+      <label>How many people will be attending?</label>
+      <InputRange
+        id = "numGuests"
+        name = "numGuests"
+        maxValue={10}
+        minValue={0}
+        value={this.state.value}
+        onChange={value => this.setState({ value })} />
+      </div>
+      <p></p>
+      <div className="field">
+        <label htmlFor="songs">Song Requests (please indicate Artist and Title)</label>
+        <textarea name="songs" id="Songs" rows = "2" required></textarea>
       </div>
       <div className="field">
-        <label htmlFor="address">Mailing Address</label>
-        <textarea name="address" id="address" rows="1" required></textarea>
-      </div>
-      <div className="field half first">
-        <label htmlFor="city">City</label>
-        <input type="text" name="city" id="city" required />
-      </div>
-      <div className="field half">
-        <label htmlFor="state">State/Province</label>
-        <input type="text" name="state" id="state" required />
-      </div>
-      <div className="field half first">
-        <label htmlFor="postalCode">Postal Code</label>
-        <input type="text" name="postalCode" id="postalCode" required />
-      </div>
-      <div className="field half">
-        <label htmlFor="country">Country</label>
-        <input type="text" name="country" id="country" required />
-      </div>
-      <div className="field">
-        <label htmlFor="message">Anything else we know before sending an RSVP?</label>
+        <label htmlFor="message">Please let us know if you have any dietary restrictions</label>
         <textarea name="message" id="message" rows="4"></textarea>
       </div>
       <ul className="actions">
