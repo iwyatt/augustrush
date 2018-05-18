@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import ReactDOM from 'react-dom';
 import pic01 from '../images/pic01.jpg'
 import pic02 from '../images/pic02.jpg'
 import pic03 from '../images/pic03.jpg'
@@ -16,7 +15,7 @@ import 'react-input-range/lib/css/index.css'
 
 class Main extends React.Component {
   constructor(props) {
-      super(props);
+      super();
       const formSubmitted = false;
       this.handleSubmit = this.handleSubmit.bind(this);
       this.state = { value: 2 };
