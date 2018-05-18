@@ -8,8 +8,39 @@ import rockhardplace from '../images/rockhardplace.jpg'
 import adventures from '../images/yenikecollage.jpg'
 import ladyoflavang from '../images/ladyoflavang.jpg'
 import pdx from '../images/pdx.jpg'
+import 'react-input-range/lib/css/index.css'
 import ReactRadioButtonGroup from 'react-radio-button-group'
 import InputRange from 'react-input-range'
+
+const sliderStyle = {
+  '.input-range__slider':{
+    background: '#ffffff',
+    border: '1px solid #000000'
+  },
+  background: '000000',
+  /*border: '1px solid #000000',*/
+  '.input-range__slider':'focus {box-shadow: 0 0 0 5px rgba(63, 81, 181, 0.2); }',
+  /*.input-range--disabled*/
+  'input-range__slider':{
+    background: '#000000',
+    border: '1px solid #ffffff'},
+  'input-range__label':{
+    color: '#aaaaaa',
+    'font-family': '"Helvetica Neue", san-serif',
+    'font-size': '0.8rem',
+    transform: 'translateZ(0)',
+    'white-space': 'nowrap' },
+  '.input-range__track': {
+    background: '#eeeeee'},
+    /*border-radius: 0.3rem;
+    cursor: pointer;
+    display: block;
+    height: 0.3rem;
+    position: relative;
+    transition: left 0.3s ease-out, width 0.3s ease-out},*/
+  '.input-range__track--active': {
+    background: '#000000' }
+ }
 
 class Main extends React.Component {
   constructor(props) {
@@ -19,22 +50,23 @@ class Main extends React.Component {
       this.state = { value: 2 };
   }
 
-handleBoolChange(value) {
-  selectedValue: value;
-}
+    handleBoolChange(value) {
+      selectedValue: value;
+    }
 
- handleSubmit(event) {
-  event.preventDefault();
-  this.formSubmitted = true;
-  const data = new FormData(event.target);
-  fetch('https://hooks.zapier.com/hooks/catch/488659/ahxg2m/', {
-    method: 'POST',
-    body: data,
-  });
-  this.forceUpdate()
- }
+    handleSubmit(event) {
+      event.preventDefault();
+      this.formSubmitted = true;
+      const data = new FormData(event.target);
+      fetch('https://hooks.zapier.com/hooks/catch/488659/ahxg2m/', {
+        method: 'POST',
+        body: data,
+      });
+      this.forceUpdate()
+     }
 
   render() {
+
     let thanks =(
         <div>
         <h2 className="major">Thank you</h2>
@@ -42,6 +74,7 @@ handleBoolChange(value) {
         <p>We highly recommend booking your travel and lodging now, as Augsust is a popular month for tourism in Portland, OR. If you are looking for recommendations on what to do, where to stay, and other information, please see our "Tour Portland" recommendations or feel free to start a conversation in the facebook group.</p>
         </div>
     )
+
     let form =(
         <div>
     <h2 className="major">RSVP</h2>
@@ -66,7 +99,7 @@ handleBoolChange(value) {
         <ReactRadioButtonGroup name="isAttending" options={["We're Looking forward to it!", "Will have to miss the fun"]} value="Looking forward to it!" isStateful={true} onChange={this.handleBoolChange} />
       <p></p>
       </div>
-      <div className = "InputRange">
+      <div style = {sliderStyle}>
       <label>How many people will be attending?</label>
       <InputRange
         id = "numGuests"
@@ -92,19 +125,17 @@ handleBoolChange(value) {
       </form>
     </div>
     )
+
     let close = <div className="close" onClick={() => {this.props.onCloseArticle()}}></div>
+
     return (
       <div id="main" style={this.props.timeout ? {display: 'flex'} : {display: 'none'}}>
-        <article id="thankyou" className={`${this.props.article === 'thankyou' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
-          <h2 className="major">Thank You</h2>
-          <span className="image main"><img src={pic01} alt="" /></span>
-          <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-          <ul className="icons">
-            <li><a href="#" className="icon fa-facebook"><span className="label">Facebook</span></a></li>
-          </ul>
+
+        <article id="contact" className={`${this.props.article === 'contact' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
+          {this.formSubmitted ? thanks:form}
           {close}
         </article>
+
         <article id="faq" className={`${this.props.article === 'faq' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Information</h2>
           <span className="image main"><img src={ladyoflavang} alt="" /></span>
@@ -128,12 +159,7 @@ handleBoolChange(value) {
           <p>Cocktail attire is fine for both men and women but come wearing whatever you want; just be ready to join in our love and joy!</p>
           {close}
         </article>
-        <article id="about" className={`${this.props.article === 'about' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
-          <h2 className="major">About</h2>
-          <span className="image main"><img src={pic03} alt="" /></span>
-          <p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
-          {close}
-        </article>
+
         <article id="PDX" className={`${this.props.article === 'PDX' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Touring PDX</h2>
           <span className="image main"><img src={pdx} alt="" /></span>
@@ -248,6 +274,7 @@ handleBoolChange(value) {
 
         {close}
         </article>
+
         <article id="OurStory" className={`${this.props.article === 'OurStory' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">First Sight</h2>
           <p>In 2008, Yen and Isaac met at a Santa Barbara coffee shop, then known as the 'North Star'. Whether it was Yen or Isaac who approached the other first is a questions of semantics - you may have to listen to both versions of the story in order to decide.</p>
@@ -264,10 +291,18 @@ handleBoolChange(value) {
           <p>10 years and multiple adventures later, we are gathering our family and friends in Portland, OR to tie the knot.</p>
           {close}
         </article>
-        <article id="contact" className={`${this.props.article === 'contact' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
-          {this.formSubmitted ? thanks:form}
+
+        <article id="thankyou" className={`${this.props.article === 'thankyou' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
+          <h2 className="major">Thank You</h2>
+          <span className="image main"><img src={pic01} alt="" /></span>
+          <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+          <ul className="icons">
+            <li><a href="#" className="icon fa-facebook"><span className="label">Facebook</span></a></li>
+          </ul>
           {close}
         </article>
+
       </div>
     )
   }
