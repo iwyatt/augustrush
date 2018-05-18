@@ -13,6 +13,15 @@ import ReactRadioButtonGroup from 'react-radio-button-group'
 import InputRange from 'react-input-range'
 import 'react-input-range/lib/css/index.css'
 
+const sliderStyle = {
+  'input-range__slider': {
+    background: '#cccccc',
+    border: '1px solid #cccccc',
+    'box-shadow': 'none',
+    transform: 'none' }
+}
+
+
 class Main extends React.Component {
   constructor(props) {
       super(props);
@@ -68,7 +77,7 @@ handleBoolChange(value) {
         <ReactRadioButtonGroup name="isAttending" options={["We're Looking forward to it!", "Will have to miss the fun"]} value="Looking forward to it!" isStateful={true} onChange={this.handleBoolChange} />
       <p></p>
       </div>
-      <div>
+      <div style = {sliderStyle}>
       <label>How many people will be attending?</label>
       <InputRange
         id = "numGuests"
