@@ -13,33 +13,22 @@ import ReactRadioButtonGroup from 'react-radio-button-group'
 import InputRange from 'react-input-range'
 
 const sliderStyle = {
-  '.input-range__slider':{
+  ".input-range__slider":{
     background: '#ffffff',
     border: '1px solid #000000'
   },
   background: '000000',
-  /*border: '1px solid #000000',*/
   '.input-range__slider':'focus {box-shadow: 0 0 0 5px rgba(63, 81, 181, 0.2); }',
-  /*.input-range--disabled*/
-  'input-range__slider':{
+  '.input-range--disabled .input-range__slider':{
     background: '#000000',
     border: '1px solid #ffffff'},
   'input-range__label':{
     color: '#aaaaaa',
     'font-family': '"Helvetica Neue", san-serif',
     'font-size': '0.8rem',
-    transform: 'translateZ(0)',
-    'white-space': 'nowrap' },
-  '.input-range__track': {
-    background: '#eeeeee'},
-    /*border-radius: 0.3rem;
-    cursor: pointer;
-    display: block;
-    height: 0.3rem;
-    position: relative;
-    transition: left 0.3s ease-out, width 0.3s ease-out},*/
-  '.input-range__track--active': {
-    background: '#000000' }
+    transform: 'translateZ(0)','white-space': 'nowrap' },
+  '.input-range__track': {background: '#eeeeee'},
+  '.input-range__track--active': {background: '#000000' }
  }
 
 class Main extends React.Component {
