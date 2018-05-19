@@ -3,11 +3,12 @@ import React from 'react'
 const Header = (props) => (
     <header id="header" style={props.timeout ? {display: 'none'} : {}}>
         <div className="logo">
-            <span className="icon fa-calendar"></span>
+            <span className="icon fa-map-pin fa-lg"></span>
         </div>
         <div className="content">
             <div className="inner">
-                <h1>Save the Date - August 4th, 2018</h1>
+                <h1>Our adventure begins</h1>
+                <h1>August 4th, 2018</h1>
                 <p>Join us in  Portland, Oregon for our wedding & celebration</p>
             </div>
         </div>
