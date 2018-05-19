@@ -8,28 +8,9 @@ import rockhardplace from '../images/rockhardplace.jpg'
 import adventures from '../images/yenikecollage.jpg'
 import ladyoflavang from '../images/ladyoflavang.jpg'
 import pdx from '../images/pdx.jpg'
-import 'react-input-range/lib/css/index.css'
+import sliderStyleCSS from '../assets/css/sliderStyle.css'
 import ReactRadioButtonGroup from 'react-radio-button-group'
 import InputRange from 'react-input-range'
-
-const sliderStyle = {
-  ".input-range__slider":{
-    background: '#ffffff',
-    border: '1px solid #000000'
-  },
-  background: '000000',
-  '.input-range__slider':'focus {box-shadow: 0 0 0 5px rgba(63, 81, 181, 0.2); }',
-  '.input-range--disabled .input-range__slider':{
-    background: '#000000',
-    border: '1px solid #ffffff'},
-  'input-range__label':{
-    color: '#aaaaaa',
-    'font-family': '"Helvetica Neue", san-serif',
-    'font-size': '0.8rem',
-    transform: 'translateZ(0)','white-space': 'nowrap' },
-  '.input-range__track': {background: '#eeeeee'},
-  '.input-range__track--active': {background: '#000000' }
- }
 
 class Main extends React.Component {
   constructor(props) {
@@ -67,7 +48,7 @@ class Main extends React.Component {
     let form =(
         <div>
     <h2 className="major">RSVP</h2>
-    <p>PLease let us know if you will be able to join</p>
+    <p>Please let us know if you will be able to join.</p>
     <form onSubmit={this.handleSubmit}>
       <div className="field half first">
         <label htmlFor="firstname">First Name</label>
@@ -85,10 +66,10 @@ class Main extends React.Component {
       <div>
         <p></p>
         <label htmlFor="rsvp">Will you be attending?</label>
-        <ReactRadioButtonGroup name="isAttending" options={["We're Looking forward to it!", "Will have to miss the fun"]} value="Looking forward to it!" isStateful={true} onChange={this.handleBoolChange} />
+        <ReactRadioButtonGroup name="isAttending" options={["Looking forward to it!", "Will have to miss the fun"]} value="Looking forward to it!" isStateful={true} onChange={this.handleBoolChange} />
       <p></p>
       </div>
-      <div style = {sliderStyle}>
+      <div style = {sliderStyleCSS}>
       <label>How many people will be attending?</label>
       <InputRange
         id = "numGuests"
@@ -101,7 +82,7 @@ class Main extends React.Component {
       <p></p>
       <div className="field">
         <label htmlFor="songs">Song Requests (please indicate Artist and Title)</label>
-        <textarea name="songs" id="Songs" rows = "2" required></textarea>
+        <textarea name="songs" id="Songs" rows = "2"></textarea>
       </div>
       <div className="field">
         <label htmlFor="message">Please let us know if you have any dietary restrictions</label>
