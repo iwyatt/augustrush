@@ -262,6 +262,15 @@ class Main extends React.Component {
           {close}
         </article>
 
+        <article id="Gifts" className={`${this.props.article === 'Gifts' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
+          <h2 className="major">Wedding Gifts</h2>
+          <p>We are so lucky to be able to spend our wedding day with all of our friends and family; your presence is truly all the present we need.</p>
+          <p>If you would like to get us a gift to celebrate, the traditional Vietnamese gift is made in the form of money to help the bride and groom with the cost of the wedding and/or start their new life together.</p>
+          <p>However, whatever gifts and well wishes you give will be greatly appreciated!</p>
+          {close}
+        </article>
+
+
         <article id="thankyou" className={`${this.props.article === 'thankyou' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Thank You</h2>
           <span className="image main"><img src={pic01} alt="" /></span>
