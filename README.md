@@ -1,7 +1,11 @@
-# Personal website for big event
-Repo for my wedding website at https://yentran.isaacwyatt.com
-Built as an exercise in using Gatsby.js in 2018
-At one point, had a form integrated with zapier to google sheets for RSVPs.
+# Personal website for big event  
+
+Repo for my wedding website at https://yentran.isaacwyatt.com  
+
+Built as an exercise in using Gatsby.js in 2018  
+
+At one point, had a form integrated with zapier to google sheets for RSVPs.  
+
 
 ----
 # gatsby-starter-dimension
