@@ -1,4 +1,8 @@
 # Personal website for big event
+Repo for my wedding website at https://yentran.isaacwyatt.com
+Built as an exercise in using Gatsby.js in 2018
+At one point, had a form integrated with zapier to google sheets for RSVPs.
+
 ----
 # gatsby-starter-dimension
 Gatsby starter based on the Dimension site template, designed by [HTML5 UP](https://html5up.net/dimension). Check out https://hunterchang.com/gatsby-starters/ for more Gatsby starters and templates.
